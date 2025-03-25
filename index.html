@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade - Algoritmo e Colorir</title>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Atividade - Algoritmo e Colorir</h1>
+        <p>Siga a sequência e clique nos quadrados corretos para colorir!</p>
+        
+        <div class="level" id="level">Level 1</div>
+        <div class="sequence" id="sequence"></div>
+
+        <!-- grid -->
+        <div class="grid" id="grid"></div>
+        
+        <button onclick="checarResult()">Verificar Resposta</button>
+        <button id="nextButton" onclick="nextSequencia()" disabled>Próximo</button>
+
+        <!-- modal -->
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal" id="modal">
+            <h2 id="modalMessage"></h2>
+            <button onclick="fecharModal()">Fechar</button>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
