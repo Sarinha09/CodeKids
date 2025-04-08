@@ -6,16 +6,44 @@ const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalMessage = document.getElementById("modalMessage");
 
-
 const sequences = [
-    { text: "⬇️🎨➡️⬆️🎨➡️🎨⬇️➡️🎨", correctPath: [1,2,4,7] },
-    { text: "🎨⬇️➡️🎨⬇️➡️🎨⬇️➡️🎨", correctPath: [0,5,10,15] },
-    { text: "🎨⬇️🎨⬇️🎨➡️🎨⬇️🎨", correctPath: [0,4,8,9,13] },
-    { text: "➡️🎨⬇️🎨➡️🎨➡️🎨⬇️🎨⬇️🎨", correctPath: [1,5,6,7,11,15] }
+    { 
+        text: "<img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/cima.png' alt='cima'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [1, 2, 4, 7] 
+    },
+    { 
+        text: "<img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [0, 5, 10, 15] 
+    },
+    { 
+        text: "<img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [0, 4, 8, 9, 13] 
+    },
+    { 
+        text: "<img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [1, 5, 6, 7, 11, 15] 
+    },
+    { 
+        text: "<img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/esquerda.png' alt='esquerda'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [0, 5, 8, 13] 
+    },
+    { 
+        text: "<img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [0, 4, 8, 12, 13, 14, 15] 
+    },
+    { 
+        text: "<img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/esquerda.png' alt='esquerda'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [5, 6, 9, 10] 
+    },
+    { 
+        text: "<img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/cima.png' alt='cima'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/baixo.png' alt='baixo'> <img src='imagens/direita.png' alt='direita'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/cima.png' alt='cima'> <img src='imagens/cima.png' alt='cima'> <img src='imagens/pintura.png' alt='pintura'> <img src='imagens/cima.png' alt='cima'> <img src='imagens/pintura.png' alt='pintura'>",
+        correctPath: [0, 3, 4, 7, 9, 10, 12, 15] 
+    }
+
 ];
 
-let currentSequence = 0; 
-let correctPath = sequences[currentSequence].correctPath; 
+let currentSequence = 0;
+let correctPath = sequences[currentSequence].correctPath;
 
 function createGrid() {
     grid.innerHTML = "";
@@ -40,7 +68,7 @@ function checarResult() {
 
     if (JSON.stringify(userPath) === JSON.stringify(correctPath)) {
         mostrarModal("🎉 Parabéns! Você acertou!", true);
-        nextButton.disabled = false; 
+        nextButton.disabled = false;
     } else {
         mostrarModal("❌ Ops! Tente novamente.", false);
     }
@@ -49,11 +77,11 @@ function checarResult() {
 function nextSequencia() {
     if (currentSequence < sequences.length - 1) {
         currentSequence++;
-        correctPath = sequences[currentSequence].correctPath; 
-        sequenceText.innerText = "Sequência: " + sequences[currentSequence].text;
-        levelText.innerText = "Level " + (currentSequence + 1); 
-        createGrid(); 
-        nextButton.disabled = true; 
+        correctPath = sequences[currentSequence].correctPath;
+        sequenceText.innerHTML = sequences[currentSequence].text; 
+        levelText.innerText = "Nível " + (currentSequence + 1);
+        createGrid();
+        nextButton.disabled = true;
     } else {
         mostrarModal("🎉 Você completou todas as sequências!", true);
         nextButton.disabled = true;
@@ -72,5 +100,17 @@ function fecharModal() {
 }
 
 // iniciar primeira
-sequenceText.innerText = "Sequência: " + sequences[currentSequence].text;
+sequenceText.innerHTML = sequences[currentSequence].text; 
 createGrid();
+
+
+const tutorialBtn = document.getElementById('tutorial');
+    const tutorialBox = document.getElementById('tutorialBox');
+
+    tutorialBtn.addEventListener('click', () => {
+        if (tutorialBox.style.display === 'none') {
+            tutorialBox.style.display = 'block';
+        } else {
+            tutorialBox.style.display = 'none';
+        }
+    });
