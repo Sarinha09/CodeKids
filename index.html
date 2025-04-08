@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Atividade - Algoritmo e Colorir</title>
-    <style>
- 
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Atividade - Algoritmo e Colorir</title>
 </head>
 <body>
-    <main>
-        <h1>Atividade - Algoritmo e Colorir</h1>
-        <p>Siga a sequência e clique nos quadrados corretos para colorir!</p>
-        
-        <div class="level" id="level">Level 1</div>
-        <div class="sequence" id="sequence"></div>
 
-        <!-- grid -->
-        <div class="grid" id="grid"></div>
-        
+  <nav class="nav-container">
+    <div class="logo-container">
+      <img src="imagens/robot.png" alt="Logo" class="logo" />
+      <span class="site-name">CodeKids</span>
+    </div>
+  </nav>
+
+  <main>
+    <div class="atividade">
+      <h2>Atividade Algoritmo e Colorir</h2>
+      <div class="level" id="level">Nível 01</div>
+
+      <div class="sequence-container">
+        <div class="sequence" id="sequence"></div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="button">
+        <button id="tutorial">?</button>
         <button onclick="checarResult()">Verificar Resposta</button>
         <button id="nextButton" onclick="nextSequencia()" disabled>Próximo</button>
+      </div>
+    </div>
 
-        <!-- modal -->
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal" id="modal">
-            <h2 id="modalMessage"></h2>
-            <button onclick="fecharModal()">Fechar</button>
-        </div>
-    </main>
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+      <h2 id="modalMessage"></h2>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+
+    <!-- Modal tutorial -->
+    <div class="tutorial" id="tutorialBox" style="display: none;">
+        <h2>Tutorial</h2>
+        <p><strong>Objetivo:</strong> Siga a sequência indicada pelas setas no grid.</p>
+        <p>A sequência <strong>sempre começa no número 0.</strong></p>
+        <p>Ao longo da sequência, algumas posições terão um <strong>balde de tinta</strong>.</p>
+        <p>Você deve <strong>clicar nas células com balde</strong> para pintá-las.</p>
+        <p>Quando terminar, clique em <strong>“Verificar Resposta”</strong> para conferir se acertou.</p>
+        <p><em>Dica: siga corretamente as setas e clique apenas nas células certas!</em></p>
+    </div>
     
-    <script src="script.js"></script>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logos">
+      <img src="imagens/ufuLogo.png" alt="UFU" class="footer-logo" />
+      <img src="imagens/facomLogo.png" alt="Faculdade de Computação" class="footer-logo" id="logoMaior" />
+      <img src="imagens/includeLogo.png" alt="Include Girls" class="footer-logo" id="logoMaior" />
+    </div>
+    <p class="footer-text">© 2025 Include Girls - Projeto desenvolvido na UFU | FACOM</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
